@@ -20,29 +20,46 @@
  * @license https://opensource.org/licenses/Apache-2.0 Apache 2.0
  */
 
-namespace Amadeus\Client\Struct\Pnr\AddMultiElements;
+
+namespace Amadeus\Client\Struct\MiniRule;
 
 /**
- * Security
+ * MiniRule ReferenceDetails
  *
- * @package Amadeus\Client\Struct\Pnr\AddMultiElements
- * @author Dieter Devlieghere <dermikagh@gmail.com>
+ * @package Amadeus\Client\Struct\MiniRule
+ * @author Aleksandr Kalugin <xkalugin@gmail.com>
  */
-class Security
+class ReferenceDetails
 {
-    /**
-     * @var string
-     */
-    public $identification;
+    const REFERENCE_TYPE_PAX = 'P';
+
+    const REFERENCE_TYPE_ADULT_PASSENGER = "PA";
+
+    const REFERENCE_TYPE_INFANT_PASSENGER = "PI";
+
+    const REFERENCE_TYPE_SEGMENT = 'S';
 
     /**
+     * self::TYPE_*
+     *
      * @var string
      */
-    public $accessMode;
+    public $type;
 
-    public function __construct($identification, $accessMode)
+    /**
+     * @var int|string
+     */
+    public $value;
+
+    /**
+     * ReferenceDetails constructor.
+     *
+     * @param string $type
+     * @param int|string $value
+     */
+    public function __construct($type, $value)
     {
-        $this->identification = $identification;
-        $this->accessMode = $accessMode;
+        $this->type = $type;
+        $this->value = $value;
     }
 }

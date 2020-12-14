@@ -20,29 +20,27 @@
  * @license https://opensource.org/licenses/Apache-2.0 Apache 2.0
  */
 
-namespace Amadeus\Client\Struct\Pnr\AddMultiElements;
+namespace Amadeus\Client\RequestCreator\Converter\MiniRule;
+
+use Amadeus\Client\RequestCreator\Converter\BaseConverter;
+use Amadeus\Client\RequestOptions\MiniRuleGetFromRecOptions;
+use Amadeus\Client\Struct;
 
 /**
- * Security
+ * MiniRule_GetFromRec
  *
- * @package Amadeus\Client\Struct\Pnr\AddMultiElements
- * @author Dieter Devlieghere <dermikagh@gmail.com>
+ * @package Amadeus\Client\RequestCreator\Converter\MiniRule
+ * @author Aleksandr Kalugin <xkalugin@gmail.com>
  */
-class Security
+class GetFromRecConv extends BaseConverter
 {
     /**
-     * @var string
+     * @param MiniRuleGetFromRecOptions $requestOptions
+     * @param int|string $version
+     * @return Struct\MiniRule\GetFromRec
      */
-    public $identification;
-
-    /**
-     * @var string
-     */
-    public $accessMode;
-
-    public function __construct($identification, $accessMode)
+    public function convert($requestOptions, $version)
     {
-        $this->identification = $identification;
-        $this->accessMode = $accessMode;
+        return new Struct\MiniRule\GetFromRec($requestOptions);
     }
 }

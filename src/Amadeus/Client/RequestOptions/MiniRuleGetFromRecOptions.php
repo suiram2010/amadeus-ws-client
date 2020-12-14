@@ -20,29 +20,24 @@
  * @license https://opensource.org/licenses/Apache-2.0 Apache 2.0
  */
 
-namespace Amadeus\Client\Struct\Pnr\AddMultiElements;
+namespace Amadeus\Client\RequestOptions;
+
+use Amadeus\Client\RequestOptions\MiniRule\Language;
 
 /**
- * Security
+ * MiniRule_GetFromRec Request Options
  *
- * @package Amadeus\Client\Struct\Pnr\AddMultiElements
- * @author Dieter Devlieghere <dermikagh@gmail.com>
+ * @package Amadeus\Client\RequestOptions
+ * @author Aleksandr Kalugin <xkalugin@gmail.com>
  */
-class Security
+class MiniRuleGetFromRecOptions extends Base
 {
     /**
-     * @var string
+     * @var null|Language
      */
-    public $identification;
-
+    public $language;
     /**
-     * @var string
+     * @var MiniRule\Pricing[]
      */
-    public $accessMode;
-
-    public function __construct($identification, $accessMode)
-    {
-        $this->identification = $identification;
-        $this->accessMode = $accessMode;
-    }
+    public $pricings;
 }

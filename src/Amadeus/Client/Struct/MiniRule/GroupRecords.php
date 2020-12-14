@@ -20,29 +20,23 @@
  * @license https://opensource.org/licenses/Apache-2.0 Apache 2.0
  */
 
-namespace Amadeus\Client\Struct\Pnr\AddMultiElements;
+
+namespace Amadeus\Client\Struct\MiniRule;
 
 /**
- * Security
+ * MiniRule GroupRecords
  *
- * @package Amadeus\Client\Struct\Pnr\AddMultiElements
- * @author Dieter Devlieghere <dermikagh@gmail.com>
+ * @package Amadeus\Client\Struct\MiniRule
+ * @author Aleksandr Kalugin <xkalugin@gmail.com>
  */
-class Security
+class GroupRecords
 {
     /**
-     * @var string
+     * @var RecordId
      */
-    public $identification;
-
+    public $recordID;
     /**
-     * @var string
+     * @var FilteringSelection
      */
-    public $accessMode;
-
-    public function __construct($identification, $accessMode)
-    {
-        $this->identification = $identification;
-        $this->accessMode = $accessMode;
-    }
+    public $filteringSelection;
 }

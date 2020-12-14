@@ -20,29 +20,19 @@
  * @license https://opensource.org/licenses/Apache-2.0 Apache 2.0
  */
 
-namespace Amadeus\Client\Struct\Pnr\AddMultiElements;
+
+namespace Amadeus\Client\Struct\MiniRule;
 
 /**
- * Security
+ * MiniRule FilteringSelection
  *
- * @package Amadeus\Client\Struct\Pnr\AddMultiElements
- * @author Dieter Devlieghere <dermikagh@gmail.com>
+ * @package Amadeus\Client\Struct\MiniRule
+ * @author Aleksandr Kalugin <xkalugin@gmail.com>
  */
-class Security
+class FilteringSelection
 {
     /**
-     * @var string
+     * @var array|ReferenceDetails[]
      */
-    public $identification;
-
-    /**
-     * @var string
-     */
-    public $accessMode;
-
-    public function __construct($identification, $accessMode)
-    {
-        $this->identification = $identification;
-        $this->accessMode = $accessMode;
-    }
+    public $referenceDetails = [];
 }

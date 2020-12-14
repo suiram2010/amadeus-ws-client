@@ -20,29 +20,28 @@
  * @license https://opensource.org/licenses/Apache-2.0 Apache 2.0
  */
 
-namespace Amadeus\Client\Struct\Pnr\AddMultiElements;
+
+namespace Amadeus\Client\Struct\MiniRule;
 
 /**
- * Security
- *
- * @package Amadeus\Client\Struct\Pnr\AddMultiElements
- * @author Dieter Devlieghere <dermikagh@gmail.com>
+ * Class LanguageDetails
+ * @package Amadeus\Client\Struct\MiniRule
+ * @author Aleksandr Kalugin <xkalugin@gmail.com>
  */
-class Security
+class LanguageDetails
 {
     /**
      * @var string
      */
-    public $identification;
-
+    public $languageCode;
     /**
      * @var string
      */
-    public $accessMode;
+    public $languageName;
 
-    public function __construct($identification, $accessMode)
+    public function __construct($languageCode, $languageName = null)
     {
-        $this->identification = $identification;
-        $this->accessMode = $accessMode;
+        $this->languageCode = $languageCode;
+        $this->languageName = $languageName;
     }
 }

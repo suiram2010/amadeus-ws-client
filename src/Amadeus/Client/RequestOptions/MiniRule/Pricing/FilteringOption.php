@@ -20,29 +20,36 @@
  * @license https://opensource.org/licenses/Apache-2.0 Apache 2.0
  */
 
-namespace Amadeus\Client\Struct\Pnr\AddMultiElements;
+
+namespace Amadeus\Client\RequestOptions\MiniRule\Pricing;
+
+use Amadeus\Client\LoadParamsFromArray;
 
 /**
- * Security
+ * MiniRule FilteringSelection
  *
- * @package Amadeus\Client\Struct\Pnr\AddMultiElements
- * @author Dieter Devlieghere <dermikagh@gmail.com>
+ * @package Amadeus\Client\RequestOptions\MiniRule
+ * @author Aleksandr Kalugin <xkalugin@gmail.com>
  */
-class Security
+class FilteringOption extends LoadParamsFromArray
 {
-    /**
-     * @var string
-     */
-    public $identification;
+    const TYPE_PAX = 'P';
+
+    const TYPE_ADULT_PASSENGER = "PA";
+
+    const TYPE_INFANT_PASSENGER = "PI";
+
+    const TYPE_SEGMENT = 'S';
 
     /**
+     * self::TYPE_*
+     *
      * @var string
      */
-    public $accessMode;
+    public $type;
 
-    public function __construct($identification, $accessMode)
-    {
-        $this->identification = $identification;
-        $this->accessMode = $accessMode;
-    }
+    /**
+     * @var string|int
+     */
+    public $value;
 }

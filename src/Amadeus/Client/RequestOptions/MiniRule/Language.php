@@ -20,29 +20,36 @@
  * @license https://opensource.org/licenses/Apache-2.0 Apache 2.0
  */
 
-namespace Amadeus\Client\Struct\Pnr\AddMultiElements;
+namespace Amadeus\Client\RequestOptions\MiniRule;
+
+use Amadeus\Client\LoadParamsFromArray;
 
 /**
- * Security
- *
- * @package Amadeus\Client\Struct\Pnr\AddMultiElements
- * @author Dieter Devlieghere <dermikagh@gmail.com>
+ * MiniRule Language
+ * @package Amadeus\Client\RequestOptions\MiniRule
+ * @author Aleksandr Kalugin <xkalugin@gmail.com>
  */
-class Security
+class Language extends LoadParamsFromArray
 {
-    /**
-     * @var string
-     */
-    public $identification;
+    const LQ_LANGUAGE_NORMALLY_USED = 1;
+    const LQ_LANGUAGE_UNDERSTOOD = 2;
+    const LQ_SPOKEN_LANGUAGE = 3;
+    const LQ_WRITTEN_LANGUAGE = 4;
+    const LQ_READ_LANGUAGE = 5;
+    const LQ_FOR_ALL_TYPES_OF_COMMUNICATION = 6;
+    const LQ_NATIVE_LANGUAGE = 7;
 
     /**
+     * self::LQ_*
+     *
+     * @var int
+     */
+    public $qualifier = self::LQ_LANGUAGE_NORMALLY_USED;
+
+    /**
+     * a two letters code (for example EN)
+     *
      * @var string
      */
-    public $accessMode;
-
-    public function __construct($identification, $accessMode)
-    {
-        $this->identification = $identification;
-        $this->accessMode = $accessMode;
-    }
+    public $code = "EN";
 }

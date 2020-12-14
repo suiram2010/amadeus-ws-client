@@ -20,29 +20,36 @@
  * @license https://opensource.org/licenses/Apache-2.0 Apache 2.0
  */
 
-namespace Amadeus\Client\Struct\Pnr\AddMultiElements;
+
+namespace Amadeus\Client\Struct\MiniRule;
 
 /**
- * Security
- *
- * @package Amadeus\Client\Struct\Pnr\AddMultiElements
- * @author Dieter Devlieghere <dermikagh@gmail.com>
+ * Class Language
+ * @package Amadeus\Client\Struct\MiniRule
+ * @author Aleksandr Kalugin <xkalugin@gmail.com>
  */
-class Security
+class Language
 {
-    /**
-     * @var string
-     */
-    public $identification;
+    const LQ_LANGUAGE_NORMALLY_USED = 1;
+    const LQ_LANGUAGE_UNDERSTOOD = 2;
+    const LQ_SPOKEN_LANGUAGE = 3;
+    const LQ_WRITTEN_LANGUAGE = 4;
+    const LQ_READ_LANGUAGE = 5;
+    const LQ_FOR_ALL_TYPES_OF_COMMUNICATION = 6;
+    const LQ_NATIVE_LANGUAGE = 7;
 
     /**
-     * @var string
+     * @var int
      */
-    public $accessMode;
+    public $languageQualifier;
+    /**
+     * @var LanguageDetails
+     */
+    public $languageDetails;
 
-    public function __construct($identification, $accessMode)
+    public function __construct($languageQualifier, $languageCode)
     {
-        $this->identification = $identification;
-        $this->accessMode = $accessMode;
+        $this->languageQualifier = $languageQualifier;
+        $this->languageDetails = new LanguageDetails($languageCode);
     }
 }
